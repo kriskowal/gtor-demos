@@ -1,0 +1,31 @@
+{
+  "name": "gtor-demos",
+  "version": "0.0.0",
+  "description": "Animated visualizations for A General Theory of Reactivity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kris Kowal <kris@cixar.com>",
+  "license": "MIT",
+  "dependencies": {
+    "blick": "^1.0.0",
+    "collections": "^2.0.1",
+    "gtor": "0.0.0",
+    "gutentag": "^1.2.0",
+    "ndim": "0.0.2",
+    "system": "^1.0.2"
+  },
+  "translators": {
+    "html": "gutentag/translate-html"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kriskowal/gtor-demos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kriskowal/gtor-demos/issues"
+  },
+  "homepage": "https://github.com/kriskowal/gtor-demos#readme"
+}

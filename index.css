@@ -1,0 +1,19 @@
+
+.box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    border: solid gray 1px;
+    border-radius: 25px;
+    background-color: white;
+    overflow: hidden;
+}
