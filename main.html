@@ -2,16 +2,13 @@
 <html>
     <head>
         <link rel="extends" href="./main">
-        <link rel="tag" href="gutentag/repeat.html">
-        <link rel="tag" href="gutentag/text.html">
+        <link rel="tag" href="./lanes.html">
     </head>
     <body>
-        <div class="box">
-            <repeat id="items">
-                <div id="item" class="item">
-                    <text id="label">—</text>
-                </div>
-            </repeat>
-        </div>
+        <lanes id="lanes">
+            <lane>Stream.from(Iterator.count()).forEach((n) =&gt; buffer.out.yield(n))</lane>
+            <lane>buffer.out.forEach((n) =&gt; Promise.delay(500), null, 1)</lane>
+            <lane>buffer.out.forEach((n) =&gt; Promise.delay(1000), null, 3)</lane>
+        </lanes>
     </body>
 </html>

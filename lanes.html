@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="extends" href="./lanes">
+        <link rel="tag" href="gutentag/repeat.html">
+        <link rel="tag" href="gutentag/text.html">
+        <meta accepts="lane[text]*">
+    </head>
+    <body>
+        <div class="box">
+            <repeat id="lanes">
+                <div id="lane" class="lane">
+                    <nobr><text id="label">—</text></nobr>
+                </div>
+            </repeat>
+            <repeat id="items">
+                <div id="item" class="item">
+                    <text id="label">—</text>
+                </div>
+            </repeat>
+        </div>
+    </body>
+</html>

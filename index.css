@@ -3,6 +3,18 @@
     position: absolute;
     top: 20px;
     left: 20px;
+    bottom: 20px;
+    right: 20px;
+}
+
+.lane {
+    position: absolute;
+    overflow: hidden;
+    text-wrap: none;
+    bottom: 0;
+    right: 0;
+    border-left: solid black 1px;
+    padding-left: 5px;
 }
 
 .item {
