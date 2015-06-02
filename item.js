@@ -4,7 +4,8 @@ var Point2 = require("ndim/point2");
 
 module.exports = Item;
 
-function Item(value) {
+function Item(order, value) {
+    this.order = order;
     this.value = value;
     this.element = null;
     this.animator = null;
@@ -20,14 +21,14 @@ var temp2 = new Point2();
 
 Item.prototype.goToLane = function (laneIndex) {
     temp.become(h).scaleThis(laneIndex);
-    temp2.become(v).scaleThis(this.value).addThis(temp);
+    temp2.become(v).scaleThis(this.order).addThis(temp);
     temp2.y += this.lanes.offset;
     this.goTo(temp2);
 };
 
 Item.prototype.transitionToLane = function (laneIndex) {
     temp.become(h).scaleThis(laneIndex);
-    temp2.become(v).scaleThis(this.value).addThis(temp);
+    temp2.become(v).scaleThis(this.order).addThis(temp);
     temp2.y += this.lanes.offset;
     this.transitionTo(temp2);
 };
