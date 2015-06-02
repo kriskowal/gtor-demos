@@ -31,6 +31,7 @@ Lanes.prototype.add = function add(component, id, scope) {
         scope.components.label.value = item.value;
         item.element = scope.components.item.actualNode;
         item.animator = scope.animator.add(item);
+        item.label = scope.components.label;
         item.lanes = this;
     }
 };

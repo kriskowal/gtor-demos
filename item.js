@@ -8,6 +8,7 @@ function Item(order, value) {
     this.order = order;
     this.value = value;
     this.element = null;
+    this.label = null;
     this.animator = null;
     this.lanes = null;
     this.source = new Point2(0, 0);

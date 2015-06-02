@@ -7,19 +7,19 @@ var Task = require("gtor/task");
 var PromiseQueue = require("gtor/promise-queue");
 var Item = require("./item");
 
-module.exports = Reduce;
+module.exports = MapReduce;
 
-function Reduce() {
+function MapReduce() {
 }
 
-Reduce.prototype.add = function (component, id, scope) {
+MapReduce.prototype.add = function (component, id, scope) {
     if (id === "this") {
         this.lanes = scope.components.lanes;
         this.setup();
     }
 };
 
-Reduce.prototype.setup = function () {
+MapReduce.prototype.setup = function () {
     var self = this;
     var lanes = self.lanes;
 
@@ -29,10 +29,14 @@ Reduce.prototype.setup = function () {
         lanes.items.push(item);
         item.goToLane(0);
         return item;
-    })
+    }, null, 10)
+    .map(function (item) {
+        item.transitionToLane(1);
+        return Task.delay(Math.random() * 1000).thenReturn(item);
+    }, null, 10)
     .reduce(function (a, b) {
-        a.transitionToLane(1);
-        b.transitionToLane(2);
+        a.transitionToLane(2);
+        b.transitionToLane(3);
         return Task.delay(Math.random() * 500 + 500)
         .then(function () {
             var temp;
@@ -41,13 +45,13 @@ Reduce.prototype.setup = function () {
                 a = b;
                 b = temp;
             }
-            a.transitionToLane(0);
-            b.transitionToLane(3);
+            a.transitionToLane(1);
+            b.transitionToLane(4);
             return Task.delay(500).thenReturn(a);
         });
     }, 4)
     .then(function (result) {
-        result.transitionToLane(4);
+        result.transitionToLane(5);
     })
     .done();
 }

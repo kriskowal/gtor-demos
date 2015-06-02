@@ -25,7 +25,7 @@ Multicast.prototype.setup = function () {
     var buffer = Stream.buffer(20);
 
     Stream.from(Iterator.range(0, 100)).forEach(function (n) {
-        var item = new Item(n);
+        var item = new Item(n, n);
         lanes.items.push(item);
         item.goToLane(0);
         return buffer.in.yield(item);
