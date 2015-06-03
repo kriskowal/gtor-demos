@@ -11,7 +11,7 @@ module.exports = Lanes;
 function Lanes(body, scope) {
     this.items = [];
     this.labels = scope.argument.children.lane.map(getInnerText);
-    this.offset = this.labels.length * 24 + 10;
+    this.offset = 20;
 }
 
 function getInnerText(node) {
@@ -24,7 +24,7 @@ Lanes.prototype.add = function add(component, id, scope) {
         scope.components.lanes.value = this.labels;
     } else if (id === "lanes:iteration") {
         scope.components.label.value = component.value;
-        scope.components.lane.actualNode.style.top = (component.index * 24) + "px";
+        scope.components.lane.actualNode.style.top = 0 + "px";
         scope.components.lane.actualNode.style.left = (25 + component.index * 100) + "px";
     } else if (id === "items:iteration") {
         var item = component.value;

@@ -2,13 +2,27 @@
 <html>
     <head>
         <link rel="extends" href="./main">
-        <link rel="tag" href="./lanes.html">
+        <link rel="tag" href="gutentag/choose.html">
+        <link rel="tag" href="./broadcast.html">
+        <link rel="tag" href="./multicast.html">
+        <link rel="tag" href="./map.html">
+        <link rel="tag" href="./map-reduce.html">
+        <link rel="tag" href="./reduce.html">
     </head>
     <body>
-        <lanes id="lanes">
-            <lane>Stream.from(Iterator.count()).forEach((n) =&gt; buffer.out.yield(n))</lane>
-            <lane>buffer.out.forEach((n) =&gt; Promise.delay(500), null, 1)</lane>
-            <lane>buffer.out.forEach((n) =&gt; Promise.delay(1000), null, 3)</lane>
-        </lanes>
+        <choose id="demos">
+            <a> <broadcast></broadcast> </a>
+            <b> <multicast></multicast> </b>
+            <e> <map></map> </e>
+            <d> <reduce></reduce> </d>
+            <c> <map-reduce></map-reduce> </c>
+        </choose>
+        <div id="menu" class="menu"><sp>
+            <button value="a">Fork</button>
+            <button value="b">Share</button>
+            <button value="e">Map</button>
+            <button value="d">Reduce</button>
+            <button value="c">Map/Reduce</button>
+        </sp></div>
     </body>
 </html>

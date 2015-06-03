@@ -6,9 +6,9 @@
     </head>
     <body>
         <lanes id="lanes">
-            <lane>Stream.from(Iterator.count()).forEach((n) =&gt; buffer.out.yield(n))</lane>
-            <lane>buffer.out.forEach((n) =&gt; Promise.delay(500), null, 1)</lane>
-            <lane>buffer.out.forEach((n) =&gt; Promise.delay(1000), null, 3)</lane>
+            <lane>source</lane>
+            <lane>1 @ 2/s</lane>
+            <lane>3 @ 1/s</lane>
         </lanes>
     </body>
 </html>

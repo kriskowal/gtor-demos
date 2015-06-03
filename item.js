@@ -45,6 +45,7 @@ Item.prototype.transitionTo = function (target) {
 };
 
 Item.prototype.draw = function animate() {
+    this.element.style.zIndex = this.order;
     this.element.style.top = this.source.y + "px";
     this.element.style.left = this.source.x + "px";
     this.element.style.transition = "none";

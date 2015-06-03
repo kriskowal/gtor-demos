@@ -33,7 +33,7 @@ Multicast.prototype.setup = function () {
             item.transitionToLane(1);
             return item;
         });
-    }, null, 10).fork(3);
+    }, null, 1).fork(3);
 
     branches[0].forEach(function (item) {
         var n = item.value;
